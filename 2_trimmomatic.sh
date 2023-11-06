@@ -23,8 +23,8 @@ for genome in "${genomes[@]}"
 do
   echo "${genome}"
   trimmomatic PE -phred33 "${RAW_READS}/${genome}_1.fq.gz" "${RAW_READS}/${genome}_2.fq.gz" \
-    "data/trimmed/${genome}_1_pairend_trimmed.fq" "data/trimmed/${genome}_1_unpair.fq" \
-    "data/trimmed/${genome}_2_pairend_trimmed.fq" "data/trimmed/${genome}_2_unpair.fq" \
+    "data/trimmed_illumina/${genome}_1_pairend_trimmed.fq" "data/trimmed_illumina/${genome}_1_unpair.fq" \
+    "data/trimmed_illumina/${genome}_2_pairend_trimmed.fq" "data/trimmed_illumina/${genome}_2_unpair.fq" \
     LEADING:3 TRAILING:3 MINLEN:100 HEADCROP:10 \
     ILLUMINACLIP:${ILLUMINACLIP}:2:30:10 SLIDINGWINDOW:4:15 -threads 32
   break
