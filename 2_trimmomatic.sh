@@ -27,5 +27,6 @@ do
     "data/trimmed/${genome}_2_pairend_trimmed.fq" "data/trimmed/${genome}_2_unpair.fq" \
     LEADING:3 TRAILING:3 MINLEN:100 HEADCROP:10 \
     ILLUMINACLIP:${ILLUMINACLIP}:2:30:10 SLIDINGWINDOW:4:15 -threads 32
-  exit
+  break
 done
+echo "Trimmomatic done"
