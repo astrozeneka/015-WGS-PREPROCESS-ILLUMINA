@@ -29,9 +29,9 @@ for genome in "${genomes[@]}"
 do
   echo "${genome}"
   trimmomatic SE -phred33 "${RAW_READS}/${genome}.fq.gz" \
-    "data/trimmed/${genome}_pairend_trimmed.fq" \
-    "data/trimmed/${genome}_unpair.fq" \
+    "data/trimmed_illumina/${genome}_trimmed.fq" \
     LEADING:3 TRAILING:3 MINLEN:100 HEADCROP:10 \
     ILLUMINACLIP:${ILLUMINACLIP}:2:30:10 SLIDINGWINDOW:4:15 -threads 32
-  exit
+  break
 done
+echo "Trimmomatic done"
